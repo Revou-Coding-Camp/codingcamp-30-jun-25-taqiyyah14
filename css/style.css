@@ -1,0 +1,268 @@
+ :root {
+            --navy-blue: #0b234f;
+            --light-blue: #3a6ea5;
+            --hover-blue: #23518f;
+            --bg-section: #f5f8ff;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-section);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: var(--navy-blue);
+        }
+
+        .main-logo {
+            height: 50px;
+            width: 50px;
+            background-image: url('assets/img1.jpg');
+            background-size: cover;
+            border-radius: 50%;
+            border: 2px solid var(--light-blue);
+        }
+
+        nav {
+            display: flex;
+            gap: 16px;
+        }
+
+        nav>a {
+            border: 1px solid var(--light-blue);
+            padding: 8px 16px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav>a:hover,
+        nav>a:focus {
+            background-color: var(--light-blue);
+            color: var(--text-light);
+            border-color: var(--hover-blue);
+        }
+
+        section {
+            background-color: #e3ebf8; /* biru muda soft */
+            margin: 24px auto;
+            max-width: 900px;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+        }
+
+        h2 {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
+
+        button {
+            background-color: var(--navy-blue);
+            color: var(--text-light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--hover-blue);
+        }
+
+        input[type="text"] {
+            border: 1px solid var(--navy-blue);
+            padding: 8px;
+            border-radius: 6px;
+            width: 250px;
+            max-width: 100%;
+        }
+
+        footer {
+            background-color: var(--navy-blue);
+            color: var(--text-light);
+            padding: 16px 0;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 32px;
+        }
+
+        /* Tailwind related fixes */
+        .min-h-\[250px\] {
+            min-height: 250px;
+        }
+
+        .py-\[32px\] {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .px-\[16px\] {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .py-\[16px\] {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+h2 {
+    font-size: 2rem;          /* Membuat lebih besar */
+    font-weight: 900;           /* Lebih tebal */
+    color: var(--navy-blue);
+    margin-bottom: 20px;        /* Ruang di bawah */
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Garis bawah dekoratif */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--light-blue), var(--navy-blue));
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Responsive untuk layar <= 768px (tablet & smartphone) */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav > a {
+    padding: 12px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--light-blue);
+  }
+
+  nav > a:last-child {
+    border-bottom: none;
+  }
+
+  section {
+    margin: 16px 12px;
+    padding: 16px;
+  }
+
+  /* Di bagian Message Us, stack form dan result */
+  #message-us .flex {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #message-us form,
+  #message-us aside {
+    max-width: 100%;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+  }
+}
+
+/* Responsive untuk layar sangat kecil <= 400px */
+@media (max-width: 400px) {
+  nav > a {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.portfolio-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.portfolio-section p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
